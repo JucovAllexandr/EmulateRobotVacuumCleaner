@@ -10,6 +10,12 @@
     <height>417</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Widget</string>
   </property>
@@ -27,22 +33,27 @@
     <number>0</number>
    </property>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="10,0,10,4">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="5,1">
      <property name="spacing">
       <number>6</number>
      </property>
      <item>
-      <widget class="WorldPainter" name="widget" native="true"/>
-     </item>
-     <item>
-      <widget class="Line" name="line">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>6</number>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QWidget" name="widget_2" native="true"/>
+       <property name="leftMargin">
+        <number>69</number>
+       </property>
+       <item>
+        <widget class="QDockWidget" name="dockWidget_2">
+         <property name="floating">
+          <bool>false</bool>
+         </property>
+         <widget class="World" name="dockWidgetContents_2"/>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -97,9 +108,9 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>WorldPainter</class>
+   <class>World</class>
    <extends>QWidget</extends>
-   <header>worldpainter.h</header>
+   <header>world.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

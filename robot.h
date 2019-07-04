@@ -5,16 +5,26 @@
 #include <QBrush>
 #include <QPen>
 #include <QVector2D>
+#include <QGraphicsItem>
+#include <QStyleOptionGraphicsItem>
 class Robot
 {
-    float x,y;
+
     float sx, sy;
-    int diameter;
+    float diameter;
     float angle;
+    float x,y;
+    QGraphicsEllipseItem *circle;
+    QGraphicsLineItem *directionLine;
+    QStyleOptionGraphicsItem style;
 public:
-    Robot(int x, int y);
+
+    Robot(float x, float y, float diameter);
     void draw(QPainter *painter);
     void move(int step, int angle);
+    void scale(float factor);
+    void checkCollision(QVector<QGraphicsItem *> &items);
+
 };
 
 #endif // ROBOT_H
